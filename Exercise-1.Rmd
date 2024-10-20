@@ -29,4 +29,18 @@ arrange_data <- function(data, column) {
 arrange_data(mtcars, mpg) %>%
   return(arrange_mtcars)
 ```
+```{r dev transformation}
 
+# Now I'm using the lakers data set, which is also pre-loaded in R. 
+data(lakers)
+
+#Here I am creating a function that will only display the observations in the data set when there was a rebound, using the etype column. 
+display_rebound <- function(lakers, column) {
+  dplyr::filter(lakers, etype == "rebound")
+}
+
+#Make the R markdown file show the transformation! 
+display_rebound(lakers, etype) %>%
+  return(display_rebound)
+
+```
