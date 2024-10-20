@@ -39,7 +39,7 @@ display_rebound <- function(lakers, column) {
   dplyr::filter(lakers, etype == "rebound")
 }
 
-#Make the R markdown file show the transformation! 
+#Make the R markdown file show the output of the function. 
 display_rebound(lakers, etype) %>%
   return(display_rebound)
 
