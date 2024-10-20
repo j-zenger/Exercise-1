@@ -1,0 +1,32 @@
+---
+title: "Exercise 1"
+output: html_document
+date: "2024-10-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# load in libraries:
+suppressMessages(library(tidyverse))
+```
+
+## Introduction
+
+This is portion 1 of the Pipeline exercise. In this R markdown file, I loaded the Tidyverse library in order to create a function using 'data' as the main argument. The data I used in this rile was mtcar, a pre-loaded data set in R. See comments below for how I created my function.  
+
+
+```{r mtcars}
+# First, I specified which dataset I'm using. I decided to use a preloaded dataset in R because that seemed easier. 
+data(mtcars)
+
+# Now I performed a transformative function using the single argument "data". This function makes the data organize itself in descending order based on the column name. 
+
+arrange_data <- function(data, column) {
+  dplyr::arrange(data, desc({{ column }}))
+}
+ # Next, I applied the arrange_data function to the mtcars data set, specifying that I want to arrange the mpg column in descending order. I included the return function just to make sure it produced something. Better safe than sorry! 
+arrange_data(mtcars, mpg) %>%
+  return(arrange_mtcars)
+```
+
