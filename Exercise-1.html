@@ -409,14 +409,14 @@ arrange_data(mtcars, mpg) %&gt;%
 <pre class="r"><code># Now I&#39;m using the lakers data set, which is also pre-loaded in R. 
 data(lakers)
 
-#Here I am creating a function that will only display the observations in the data set when there was a rebound, using the etype column. 
-display_rebound &lt;- function(lakers, column) {
+#Here, I am creating a function that will only display the observations in the data set when there was a rebound, using the etype column. Here&#39;s where I get a bit confused, because data is an arbitrary term for the data set, which is specific to whatever data set I used. So how can I change the name of the argument itself when its name is what calls the data set forward? Anyways, that is why I simply changed the name of the function. Will return to this if I get some answers. 
+data_new &lt;- function(lakers, column) {
   dplyr::filter(lakers, etype == &quot;rebound&quot;)
 }
 
-#Make the R markdown file show the transformation! 
-display_rebound(lakers, etype) %&gt;%
-  return(display_rebound)</code></pre>
+#Make the R markdown file show the output of the function. 
+data_new(lakers, etype) %&gt;%
+  return(data_new)</code></pre>
 <pre><code>##          date opponent game_type  time period   etype team
 ## 1    20081028      POR      home 11:37      1 rebound  LAL
 ## 2    20081028      POR      home 11:23      1 rebound  LAL
