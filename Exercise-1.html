@@ -9,6 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="202374738" />
 
 <meta name="date" content="2024-10-20" />
 
@@ -350,6 +351,7 @@ display: none;
 
 
 <h1 class="title toc-ignore">Exercise 1</h1>
+<h4 class="author">202374738</h4>
 <h4 class="date">2024-10-20</h4>
 
 </div>
@@ -365,7 +367,7 @@ function.</p>
 <pre class="r"><code># First, I specified which dataset I&#39;m using. I decided to use a preloaded dataset in R because that seemed easier. 
 data(mtcars)
 
-# Now I performed a transformative function using the single argument &quot;data&quot;. This function makes the data organize itself in descending order based on the column name. 
+# Next, I performed a transformative function using the single argument &quot;data&quot;. This function makes the data organize itself in descending order based on the column name. 
 
 arrange_data &lt;- function(data, column) {
   dplyr::arrange(data, desc({{ column }}))
@@ -409,7 +411,7 @@ arrange_data(mtcars, mpg) %&gt;%
 <pre class="r"><code># Now I&#39;m using the lakers data set, which is also pre-loaded in R. 
 data(lakers)
 
-#Here, I am creating a function that will only display the observations in the data set when there was a rebound, using the etype column. Here&#39;s where I get a bit confused, because data is an arbitrary term for the data set, which is specific to whatever data set I used. So how can I change the name of the argument itself when its name is what calls the data set forward? Anyways, that is why I simply changed the name of the function. Will return to this if I get some answers. 
+#Here, I am creating a function that will only display the observations in the data set when there was a rebound, using the etype column
 data_new &lt;- function(lakers, column) {
   dplyr::filter(lakers, etype == &quot;rebound&quot;)
 }

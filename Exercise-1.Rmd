@@ -2,6 +2,7 @@
 title: "Exercise 1"
 output: html_document
 date: "2024-10-20"
+author: "202374738"
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +21,7 @@ This is portion 1 of the Pipeline exercise. In this R markdown file, I loaded th
 # First, I specified which dataset I'm using. I decided to use a preloaded dataset in R because that seemed easier. 
 data(mtcars)
 
-# Now I performed a transformative function using the single argument "data". This function makes the data organize itself in descending order based on the column name. 
+# Next, I performed a transformative function using the single argument "data". This function makes the data organize itself in descending order based on the column name. 
 
 arrange_data <- function(data, column) {
   dplyr::arrange(data, desc({{ column }}))
@@ -34,7 +35,7 @@ arrange_data(mtcars, mpg) %>%
 # Now I'm using the lakers data set, which is also pre-loaded in R. 
 data(lakers)
 
-#Here, I am creating a function that will only display the observations in the data set when there was a rebound, using the etype column. Here's where I get a bit confused, because data is an arbitrary term for the data set, which is specific to whatever data set I used. So how can I change the name of the argument itself when its name is what calls the data set forward? Anyways, that is why I simply changed the name of the function. Will return to this if I get some answers. 
+#Here, I am creating a function that will only display the observations in the data set when there was a rebound, using the etype column
 data_new <- function(lakers, column) {
   dplyr::filter(lakers, etype == "rebound")
 }
